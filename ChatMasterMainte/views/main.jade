@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1= title
+    p ID #{id}
+    p PW #{pw}
+
+    form( method='POST', action='/logout')
+        input( type='submit', value='logout' )
+
+    table(border='1')
+        thead
+            tr
+                th #
+                th ID
+                th Name
+                th Age
+        tbody
+            each doc, i in docs
+                tr
+                    td= i+1
+                    td= doc._id
+                    td= doc.name
+                    td= doc.age
+                 
