@@ -6,7 +6,11 @@ block content
     p PW #{pw}
 
     form( method='POST', action='/logout')
-        input( type='submit', value='logout' )
+        input( type='submit', value='Logout' )
+    form( method='POST', action='/users/add')
+        input( type='text', name='name' )
+        input( type='text', name='age' value=20 )
+        input( type='submit', value='Add' )
 
     table(border='1')
         thead
@@ -19,7 +23,8 @@ block content
             each doc, i in docs
                 tr
                     td= i+1
-                    td= doc._id
+                    td: a(href='/users/'+doc._id) Edit
+                    td: a(href='/users/delete/'+doc._id) Delete
                     td= doc.name
                     td= doc.age
-                 
+ 

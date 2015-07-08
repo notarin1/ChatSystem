@@ -5,11 +5,9 @@ var router = express.Router();
 /**
  * 引数付き：idとpassという引数指定の場合
  */
-router.get('/', function (req, res) {
-    var id = req.params.id;
-    var pass = req.params.pass;
-    res.send('id=' + id + " pass=" + pass);
+router.get('/:id', function (req, res) {
+    var id = req.param('id');
+    res.send('id=' + id);
 });
-
 
 module.exports = router;

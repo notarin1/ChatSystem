@@ -7,6 +7,8 @@
  * 
  */
 
+var debug = require('debug')('app4');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -56,8 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // アクセスされるルートごとの描画コード
 app.use('/', routes);
-app.use('/users', users);
-app.use('/users/:id/:pass', userinfo);
+app.use('/users', users);   // ユーザ一覧＋ユーザ編集
 app.use('/login', login);
 app.use('/logout', logout);
 

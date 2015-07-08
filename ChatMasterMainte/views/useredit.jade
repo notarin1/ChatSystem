@@ -1,0 +1,11 @@
+﻿extends layout
+
+block content
+  h1= title
+  p Editting #{username}
+  form( method='POST', action='/users/update/')
+    input( type='hidden', name='id' value=item._id )
+    input( type='text', name='name' value=item.name )
+    input( type='text', name='age' value=item.age )
+    input( type='submit', value='Update' )
+ 
